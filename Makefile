@@ -22,6 +22,9 @@ endif
 RELEASE_NOTES_FILES := $(wildcard ReleaseNotes/*.md)
 ENV=Release
 DERIVED_DATA_DIR=$(shell ls -td $$HOME/Library/Developer/Xcode/DerivedData/$(NAME)-* | head -1)
+# Sparkle's generate_appcast ships as an SPM binary artifact, not on PATH. Resolve
+# the newest one from the resolved SwiftPM artifacts, falling back to PATH.
+GENERATE_APPCAST=$(or $(shell ls -t $$HOME/Library/Developer/Xcode/DerivedData/$(NAME)-*/SourcePackages/artifacts/sparkle/Sparkle/bin/generate_appcast 2>/dev/null | head -1),generate_appcast)
 
 .PHONY: build upload release setversion appcast
 
@@ -54,12 +57,12 @@ appcast: Releases/$(NAME)-$(FULL_VERSION).html
 	rm Releases/$(NAME).dmg || true
 ifneq (, $(BETA))
 	rm Releases/$(NAME)$(FULL_VERSION)*.delta >/dev/null 2>/dev/null || true
-	generate_appcast --channel beta --maximum-versions 10 --maximum-deltas $(DELTAS) --link "https://lowtechguys.com/startupfolder" --full-release-notes-url "https://github.com/FuzzyIdeas/$(NAME)/releases" --release-notes-url-prefix https://files.lowtechguys.com/ReleaseNotes/ --download-url-prefix "https://files.lowtechguys.com/releases/" -o Releases/appcast.xml Releases
+	$(GENERATE_APPCAST) --channel beta --maximum-versions 10 --maximum-deltas $(DELTAS) --link "https://lowtechguys.com/startupfolder" --full-release-notes-url "https://github.com/FuzzyIdeas/$(NAME)/releases" --release-notes-url-prefix https://files.lowtechguys.com/ReleaseNotes/ --download-url-prefix "https://files.lowtechguys.com/releases/" -o Releases/appcast.xml Releases
 else
 	rm Releases/$(NAME)$(FULL_VERSION)*.delta >/dev/null 2>/dev/null || true
 	rm Releases/$(NAME)-*b*.dmg >/dev/null 2>/dev/null || true
 	rm Releases/$(NAME)*b*.delta >/dev/null 2>/dev/null || true
-	generate_appcast --maximum-versions 10 --maximum-deltas $(DELTAS) --link "https://lowtechguys.com/startupfolder" --full-release-notes-url "https://github.com/FuzzyIdeas/$(NAME)/releases" --release-notes-url-prefix https://files.lowtechguys.com/ReleaseNotes/ --download-url-prefix "https://files.lowtechguys.com/releases/" -o Releases/appcast.xml Releases
+	$(GENERATE_APPCAST) --maximum-versions 10 --maximum-deltas $(DELTAS) --link "https://lowtechguys.com/startupfolder" --full-release-notes-url "https://github.com/FuzzyIdeas/$(NAME)/releases" --release-notes-url-prefix https://files.lowtechguys.com/ReleaseNotes/ --download-url-prefix "https://files.lowtechguys.com/releases/" -o Releases/appcast.xml Releases
 	cp Releases/$(NAME)-$(FULL_VERSION).dmg Releases/$(NAME).dmg
 endif
 
@@ -78,3 +81,7 @@ ifneq (, $(BETA))
 else
 	pandoc -f gfm --section-divs -o $@ --standalone --metadata title="$(NAME) $(FULL_VERSION) - Release Notes" --css https://files.lowtechguys.com/release.css ReleaseNotes/$(VERSION).md
 endif
+
+.PHONY: hooks
+hooks:
+	@ln -sf "$(CURDIR)/.pre-commit.sh" .git/hooks/pre-commit && echo "pre-commit hook installed -> .pre-commit.sh"
