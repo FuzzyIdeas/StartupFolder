@@ -20,7 +20,9 @@ extension URL {
     }
 }
 
-@Observable
+/// StartupManager is main-actor isolated (Defaults 9's @Default wrapper is), and every item
+/// method that touches SM or drives the UI runs there anyway.
+@Observable @MainActor
 class StartupItem: Identifiable, CustomStringConvertible {
     init(url: URL, folder: FilePath.ComponentView? = nil, startProcessInfoFetching: Bool = true) {
         self.url = url
@@ -125,8 +127,8 @@ class StartupItem: Identifiable, CustomStringConvertible {
 
     var folder: FilePath.ComponentView?
 
-    var stdoutFilePath: FilePath? = nil
-    var stderrFilePath: FilePath? = nil
+    var stdoutFilePath: FilePath?
+    var stderrFilePath: FilePath?
 
     var name: String
     var type: StartupItemType
@@ -136,7 +138,7 @@ class StartupItem: Identifiable, CustomStringConvertible {
     var isTrashed = false
     var shortcut: Shortcut?
     var isTerminating = false
-    var icon: NSImage? = nil
+    var icon: NSImage?
 
     @ObservationIgnored lazy var utType: UTType? = {
         if type == .script, ext.isEmpty {
@@ -180,7 +182,7 @@ class StartupItem: Identifiable, CustomStringConvertible {
         return nil
     }()
 
-    var pid: Int32? = nil
+    var pid: Int32?
 
     var launching = false
 
@@ -225,7 +227,9 @@ class StartupItem: Identifiable, CustomStringConvertible {
         "\(name) - \(type.text) - \(status.text)"
     }
 
-    var launched: Bool { status != .notStarted }
+    var launched: Bool {
+        status != .notStarted
+    }
 
     var isNetLink: Bool {
         type == .link && (siteURL?.scheme?.starts(with: "http") ?? false)
@@ -247,7 +251,9 @@ class StartupItem: Identifiable, CustomStringConvertible {
         }
     }
 
-    var isRunning: Bool { status == .running }
+    var isRunning: Bool {
+        status == .running
+    }
 
     var canTerminate: Bool {
         status == .running && (app.map { !$0.isTerminated } ?? process?.isRunning ?? (pid != nil))
@@ -631,7 +637,9 @@ class StartupItem: Identifiable, CustomStringConvertible {
         startTime = Date()
 
         process.terminationHandler = { [weak self] proc in
-            mainAsync {
+            // mainActor, not mainAsync: the item is main-actor isolated and only the
+            // @MainActor closure proves to the compiler that this runs there.
+            mainActor {
                 guard let self else {
                     return
                 }
@@ -691,7 +699,7 @@ class StartupItem: Identifiable, CustomStringConvertible {
             return nil
         }
 
-        Task.init { [weak self] in
+        Task { [weak self] in
             if let image = await downloadFavicon(for: url) {
                 mainAsync {
                     FAVICON_CACHE.setObject(image, forKey: url as NSURL)

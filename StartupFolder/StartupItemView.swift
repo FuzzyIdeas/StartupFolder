@@ -106,7 +106,6 @@ struct StartupItemView: View {
         .opacity(hoveringSettings ? 1 : 0.5)
     }
 
-    @ViewBuilder
     var itemStatus: some View {
         HStack {
             if item.isTerminating || item.launching {
@@ -230,12 +229,12 @@ struct StartupItemView: View {
         WrappingHStack(alignment: .leading, verticalSpacing: 2) {
             if item.canTerminate {
                 Button {
-                    Task.init { await item.restart() }
+                    Task { await item.restart() }
                 } label: {
                     Label("Restart", systemImage: "arrow.clockwise")
                 }.disabled(item.isTerminating)
                 Button {
-                    Task.init { await item.terminate() }
+                    Task { await item.terminate() }
                 } label: {
                     Label("Quit", systemImage: "xmark.circle")
                 }.disabled(item.isTerminating)
@@ -370,7 +369,7 @@ struct StartupItemView: View {
 
 }
 
-let RUNNING_ITEM: StartupItem = {
+@MainActor let RUNNING_ITEM: StartupItem = {
     let s = StartupItem(url: "~/Startup/test-wait".existingFilePath!.url)
     s.status = .running
     s.startTime = Date().addingTimeInterval(-300)

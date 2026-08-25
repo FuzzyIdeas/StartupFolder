@@ -314,4 +314,4 @@ class StartupManager {
 
 }
 
-let SM = StartupManager()
+@MainActor let SM = StartupManager()
