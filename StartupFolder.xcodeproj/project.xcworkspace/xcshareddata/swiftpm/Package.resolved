@@ -1,168 +1,168 @@
 {
-  "originHash" : "d0b6f522dc2dd00c659e6b89b35a4d965397e190e72da233f58feb28224f48b2",
-  "pins" : [
+  "originHash": "d0b6f522dc2dd00c659e6b89b35a4d965397e190e72da233f58feb28224f48b2",
+  "pins": [
     {
-      "identity" : "appreceiptvalidator",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/alin23/AppReceiptValidator",
-      "state" : {
-        "revision" : "e35794a03103839e024f71534e263310038c930d",
-        "version" : "1.2.0"
+      "identity": "appreceiptvalidator",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/alin23/AppReceiptValidator",
+      "state": {
+        "revision": "e35794a03103839e024f71534e263310038c930d",
+        "version": "1.2.0"
       }
     },
     {
-      "identity" : "asn1decoder",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/IdeasOnCanvas/ASN1Decoder",
-      "state" : {
-        "revision" : "1fa1e9c68c27cbed56e2a997605ae2e808cf4d98",
-        "version" : "1.8.2"
+      "identity": "asn1decoder",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/IdeasOnCanvas/ASN1Decoder",
+      "state": {
+        "revision": "1fa1e9c68c27cbed56e2a997605ae2e808cf4d98",
+        "version": "1.8.2"
       }
     },
     {
-      "identity" : "defaults",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/sindresorhus/Defaults",
-      "state" : {
-        "revision" : "00a7465a0668a87fa159e779b9d80f1f9652357e",
-        "version" : "9.0.9"
+      "identity": "defaults",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/sindresorhus/Defaults",
+      "state": {
+        "revision": "00a7465a0668a87fa159e779b9d80f1f9652357e",
+        "version": "9.0.9"
       }
     },
     {
-      "identity" : "dynamiccolor",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/yannickl/DynamicColor",
-      "state" : {
-        "revision" : "d9beca13ca85baa50ee29832d0db5129fba69630",
-        "version" : "5.0.1"
+      "identity": "dynamiccolor",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/yannickl/DynamicColor",
+      "state": {
+        "revision": "d9beca13ca85baa50ee29832d0db5129fba69630",
+        "version": "5.0.1"
       }
     },
     {
-      "identity" : "faviconfinder",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/will-lumley/FaviconFinder",
-      "state" : {
-        "revision" : "11c2b27fbdc5fdfe0bf3addac01d27c40299a819",
-        "version" : "5.1.5"
+      "identity": "faviconfinder",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/will-lumley/FaviconFinder",
+      "state": {
+        "revision": "11c2b27fbdc5fdfe0bf3addac01d27c40299a819",
+        "version": "5.1.5"
       }
     },
     {
-      "identity" : "launchatlogin",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/FuzzyIdeas/LaunchAtLogin",
-      "state" : {
-        "revision" : "5173435c65730c87b8e8075955d90330bed641b5",
-        "version" : "1.2.0"
+      "identity": "launchatlogin",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/FuzzyIdeas/LaunchAtLogin",
+      "state": {
+        "revision": "5173435c65730c87b8e8075955d90330bed641b5",
+        "version": "1.2.0"
       }
     },
     {
-      "identity" : "lowtech",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/FuzzyIdeas/Lowtech",
-      "state" : {
-        "branch" : "ventura",
-        "revision" : "8a9651e2420385ba8b3f412bc3b7b48d77c3ff1f"
+      "identity": "lowtech",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/FuzzyIdeas/Lowtech",
+      "state": {
+        "branch": "ventura",
+        "revision": "0e5d214379c6c3be76413c42a7f5ac603c03e171"
       }
     },
     {
-      "identity" : "magnet",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/alin23/Magnet",
-      "state" : {
-        "revision" : "50c86d53d7860250e8557dfbb425e96bc424993f",
-        "version" : "4.2.0"
+      "identity": "magnet",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/alin23/Magnet",
+      "state": {
+        "revision": "50c86d53d7860250e8557dfbb425e96bc424993f",
+        "version": "4.2.0"
       }
     },
     {
-      "identity" : "paddlespm",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/alin23/PaddleSPM",
-      "state" : {
-        "revision" : "7de514e10acd65e13eec1f5b75b7f18f64dbd775",
-        "version" : "4.5.1"
+      "identity": "paddlespm",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/alin23/PaddleSPM",
+      "state": {
+        "revision": "7de514e10acd65e13eec1f5b75b7f18f64dbd775",
+        "version": "4.5.1"
       }
     },
     {
-      "identity" : "sauce",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Clipy/Sauce",
-      "state" : {
-        "revision" : "1fce89ccc9cbb091022c17ef8f9939901d4e951a",
-        "version" : "2.5.2"
+      "identity": "sauce",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/Clipy/Sauce",
+      "state": {
+        "revision": "1fce89ccc9cbb091022c17ef8f9939901d4e951a",
+        "version": "2.5.2"
       }
     },
     {
-      "identity" : "sparkle",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/sparkle-project/Sparkle",
-      "state" : {
-        "revision" : "eef1a539a373c1f1a320624b1130fc5de7b2e100",
-        "version" : "2.10.0"
+      "identity": "sparkle",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/sparkle-project/Sparkle",
+      "state": {
+        "revision": "eef1a539a373c1f1a320624b1130fc5de7b2e100",
+        "version": "2.10.0"
       }
     },
     {
-      "identity" : "swift-atomics",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-atomics",
-      "state" : {
-        "revision" : "0442cb5a3f98ab802acb777929fdb446bda11a34",
-        "version" : "1.3.1"
+      "identity": "swift-atomics",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/apple/swift-atomics",
+      "state": {
+        "revision": "0442cb5a3f98ab802acb777929fdb446bda11a34",
+        "version": "1.3.1"
       }
     },
     {
-      "identity" : "swift-crypto",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-crypto",
-      "state" : {
-        "revision" : "60f13f60c4d093691934dc6cfdf5f508ada1f894",
-        "version" : "2.6.0"
+      "identity": "swift-crypto",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/apple/swift-crypto",
+      "state": {
+        "revision": "60f13f60c4d093691934dc6cfdf5f508ada1f894",
+        "version": "2.6.0"
       }
     },
     {
-      "identity" : "swift-syntax",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/swiftlang/swift-syntax",
-      "state" : {
-        "revision" : "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
-        "version" : "604.0.0"
+      "identity": "swift-syntax",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/swiftlang/swift-syntax",
+      "state": {
+        "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+        "version": "604.0.0"
       }
     },
     {
-      "identity" : "swiftdate",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/malcommac/SwiftDate",
-      "state" : {
-        "revision" : "5d943224c3bb173e6ecf27295611615eba90c80e",
-        "version" : "7.0.0"
+      "identity": "swiftdate",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/malcommac/SwiftDate",
+      "state": {
+        "revision": "5d943224c3bb173e6ecf27295611615eba90c80e",
+        "version": "7.0.0"
       }
     },
     {
-      "identity" : "swiftsoup",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/scinfu/SwiftSoup.git",
-      "state" : {
-        "revision" : "6c7915e16f729857aec3e99068c361e58a00ed68",
-        "version" : "2.13.4"
+      "identity": "swiftsoup",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/scinfu/SwiftSoup.git",
+      "state": {
+        "revision": "6c7915e16f729857aec3e99068c361e58a00ed68",
+        "version": "2.13.4"
       }
     },
     {
-      "identity" : "swiftui-system-colors",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/diniska/swiftui-system-colors",
-      "state" : {
-        "revision" : "5127afab23337699a714e036588f02d9481ae612",
-        "version" : "1.2.0"
+      "identity": "swiftui-system-colors",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/diniska/swiftui-system-colors",
+      "state": {
+        "revision": "5127afab23337699a714e036588f02d9481ae612",
+        "version": "1.2.0"
       }
     },
     {
-      "identity" : "wrappinghstack",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ksemianov/WrappingHStack",
-      "state" : {
-        "revision" : "3300f68b6bf5f8a75ee7ca8a40f136a558053d10",
-        "version" : "0.2.0"
+      "identity": "wrappinghstack",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/ksemianov/WrappingHStack",
+      "state": {
+        "revision": "3300f68b6bf5f8a75ee7ca8a40f136a558053d10",
+        "version": "0.2.0"
       }
     }
   ],
-  "version" : 3
+  "version": 3
 }
