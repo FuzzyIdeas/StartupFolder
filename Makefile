@@ -32,12 +32,12 @@ print-%  : ; @echo $* = $($*)
 
 build: SHELL=fish
 build:
-	make-app --build --devid --dmg -s $(NAME) -t $(NAME) -c Release --version $(FULL_VERSION)
+	make-app --build --devid --dmg -s $(NAME) -c Release --version $(FULL_VERSION)
 	xcp /tmp/apps/$(NAME)-$(FULL_VERSION).dmg Releases/
 
 dmg: SHELL=fish
 dmg:
-	make-app --dmg -s $(NAME) -t $(NAME) -c Release --version $(FULL_VERSION) /tmp/apps/$(NAME).app
+	make-app --dmg -s $(NAME) -c Release --version $(FULL_VERSION) /tmp/apps/$(NAME).app
 	xcp /tmp/apps/$(NAME)-$(FULL_VERSION).dmg Releases/
 
 upload:
